@@ -22,26 +22,36 @@
 # SOFTWARE.
 
 """
-./convert-us.py <firefox-expiration-us.csv >firefox-expiration.csv
+./expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
 """
 
 from __future__ import division
 
 import csv
 import datetime
+import itertools
 import os
 import sys
 
 def main():
-    cin = csv.reader(sys.stdin)
-    cout = csv.writer(sys.stdout, lineterminator=os.linesep)
-    cout.writerow(['version', 'expiration_s', 'expiration_us', 'expiration_iso'])
-    it = iter(cin)
-    next(it)
-    for version, expiration_us in it:
-        expiration_s = int(expiration_us) / 10**6
-        expiration_iso = datetime.datetime.utcfromtimestamp(expiration_s).isoformat() + 'Z'
-        cout.writerow([version, expiration_s, expiration_us, expiration_iso])
+    fh_expirations = open(sys.argv[1], 'rb')
+    fh_releases = open(sys.argv[2], 'rb')
+    c_expirations = csv.reader(fh_expirations)
+    c_releases = csv.reader(fh_releases)
+    iter_c_expirations = iter(c_expirations)
+    iter_c_releases = iter(c_releases)
+    next(iter_c_expirations)
+    next(iter_c_releases)
+    c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
+    c_out.writerow(['version', 'release_date', 'expiration_date'])
+    for expiration, release in itertools.izip(iter_c_expirations, iter_c_releases):
+        expiration_version, expiration_s, _, _ = expiration
+        release_version, release_date = release
+        if expiration_version != release_version:
+            raise ValueError("%r != %r" % (expiration_version, release_version))
+        expiration_datetime = datetime.datetime.utcfromtimestamp(float(expiration_s))
+        expiration_date = expiration_datetime.strftime('%Y-%m-%d')
+        c_out.writerow([expiration_version, release_date, expiration_date])
 
 if __name__ == '__main__':
     main()
