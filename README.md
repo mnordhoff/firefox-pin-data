@@ -27,7 +27,7 @@ Columns:
 6. `previous_release_days`: Days from the previous row's release date until the current row's release date
 7. `firefox_version`: Tor Browser only; Firefox version it is based on
 
-Firefox `38.0.6` and `40.0.1` were both canceled, or something, have no official release dates, and are excluded from this data.
+Firefox `38.0.6` and `40.0.1` sort of exist, but have no official release dates, and are excluded from this data.
 
 Firefox `45.4.0esr` and Tor Browser `6.5a3` have yet to be released and are subject to change. Firefox `45.4.0esr-6.0.5` refers to the revision of Firefox `45.4.0esr` used by Tor Browser `6.0.5`, which may differ from the final release.
 
