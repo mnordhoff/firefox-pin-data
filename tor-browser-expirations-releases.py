@@ -66,7 +66,7 @@ def main():
             release_window_timedelta = release_datetime - previous_release_datetime
             release_window_s = release_window_timedelta.total_seconds() / 86400
             release_window_days = '{:.2f}'.format(release_window_s)
-        c_out.writerow([version, firefox_version, release_date, expiration_date, expiration_window_days, release_window_days, firefox_version])
+        c_out.writerow([version, release_date, expiration_date, expiration_window_days, release_window_days, firefox_version])
 
 if __name__ == '__main__':
     main()
