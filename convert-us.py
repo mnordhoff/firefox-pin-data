@@ -21,6 +21,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from __future__ import division
+
 import csv
 import datetime
 import os
@@ -29,13 +31,13 @@ import sys
 def main():
     cin = csv.reader(sys.stdin)
     cout = csv.writer(sys.stdout, lineterminator=os.linesep)
-    cout.writerow(['version', 'expiration_us', 'expiration_iso'])
+    cout.writerow(['version', 'expiration_s', 'expiration_us', 'expiration_iso'])
     it = iter(cin)
     it.next()
     for version, expiration_us in it:
         expiration_s = int(expiration_us) / 10**6
         expiration_iso = datetime.datetime.fromtimestamp(expiration_s).isoformat() + 'Z'
-        cout.writerow([version, expiration_us, expiration_iso])
+        cout.writerow([version, expiration_s, expiration_us, expiration_iso])
 
 if __name__ == '__main__':
     main()
