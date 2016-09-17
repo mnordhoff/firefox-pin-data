@@ -48,19 +48,19 @@ When releases (usually from different series) are made simultaneously, the `prev
 
 ## Sources
 
-https://blog.torproject.org/blog/tor-browser-605-released
+* https://blog.torproject.org/blog/tor-browser-605-released
 
-https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt
-https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt?h=maint-6.0
+* https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt
+* https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt?h=maint-6.0
 
-https://hg.mozilla.org/releases/mozilla-esr38/
-https://hg.mozilla.org/releases/mozilla-esr45/
-https://hg.mozilla.org/releases/mozilla-release/
+* https://hg.mozilla.org/releases/mozilla-esr38/
+* https://hg.mozilla.org/releases/mozilla-esr45/
+* https://hg.mozilla.org/releases/mozilla-release/
 
-https://wiki.mozilla.org/Releases/Old/2014
-https://wiki.mozilla.org/Releases/Old/2015
+* https://wiki.mozilla.org/Releases/Old/2014
+* https://wiki.mozilla.org/Releases/Old/2015
 
-https://www.mozilla.org/en-US/firefox/releases/
+* https://www.mozilla.org/en-US/firefox/releases/
 
 ## License
 
