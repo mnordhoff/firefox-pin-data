@@ -2,7 +2,7 @@
 
 CSV files containing Firefox (stable and ESR stable) and Tor Browser (alpha and stable) release dates and static key pinning expiration dates. And two hacky Python programs for processing it.
 
-Files:
+## Files
 
 * `firefox-esr-*`: Firefox ESR releases
 * `firefox-*`: Firefox regular releases
@@ -17,7 +17,7 @@ Files:
 
 * `*.py`: Hacky Python scripts. :-)
 
-Columns:
+## Columns
 
 1. `version`: Firefox or Tor Browser version
 2. `release_date`: Firefox or Tor Browser release date
@@ -27,8 +27,16 @@ Columns:
 6. `previous_release_days`: Days from the previous row's release date until the current row's release date
 7. `firefox_version`: Tor Browser only; Firefox version it is based on
 
+## Limitations
+
 Firefox `38.0.6` and `40.0.1` sort of exist, but have no official release dates, and are excluded from this data.
 
 Firefox `45.4.0esr` and Tor Browser `6.5a3` have yet to be released and are subject to change. Firefox `45.4.0esr-6.0.5` refers to the revision of Firefox `45.4.0esr` used by Tor Browser `6.0.5`, which may differ from the final release.
+
+Except for `6.0.5`, the Tor Browser data assumes the expiration date is identical to the corresponding Firefox release.
+
+Except for `6.0.5`, the Tor Browser data assumes the release date given in the changelog is accurate.
+
+## License
 
 The `.csv` files are, i believe, in the public domain by nature. The other files are under the MIT license.
