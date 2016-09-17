@@ -24,9 +24,9 @@
 """
 ./expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr-releases.csv >firefox-esr-expiration-release-dates.csv
-./expirations-releases.py firefox-esr-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
-./expirations-releases.py firefox-esr-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
-./expirations-releases.py firefox-esr-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
+./expirations-releases.py tor-browser-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
+./expirations-releases.py tor-browser-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
+./expirations-releases.py tor-browser-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
 """
 
 from __future__ import division
@@ -52,15 +52,16 @@ def main():
     c_out.writerow(write_row)
     expirations = {}
     for row in c_expirations:
-        firefox_version = row['version']
+        version = row['version']
         expiration_s = row['expiration_s']
-        expirations[firefox_version] = expiration_s
+        expirations[version] = expiration_s
     previous_expiration_datetime = previous_release_datetime = None
     for row in c_releases:
         version = row['version']
-        firefox_version = row.get('firefox_version', version)
+        if 'firefox_version' in c_releases.fieldnames:
+            firefox_version = row['firefox_version']
         release_date = row['date']
-        expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
+        expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
         release_datetime = datetime.datetime.strptime(release_date, '%Y-%m-%d')
         expiration_window_timedelta = expiration_datetime - release_datetime
