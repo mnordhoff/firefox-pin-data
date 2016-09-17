@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 """
-./expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
+./tor-browser-expirations-releases.py tor-browser-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
 """
 
 from __future__ import division
@@ -43,15 +43,15 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'release_date', 'expiration_date'])
+    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date'])
     for expiration, release in itertools.izip(iter_c_expirations, iter_c_releases):
         expiration_version, expiration_s, _, _ = expiration
-        release_version, release_date = release
-        if expiration_version != release_version:
+        release_version, release_firefox_version, release_date = release
+        if expiration_version != release_firefox_version:
             raise ValueError("%r != %r" % (expiration_version, release_version))
         expiration_datetime = datetime.datetime.utcfromtimestamp(float(expiration_s))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
-        c_out.writerow([expiration_version, release_date, expiration_date])
+        c_out.writerow([release_version, expiration_version, release_date, expiration_date])
 
 if __name__ == '__main__':
     main()
