@@ -43,7 +43,7 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date'])
+    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date', 'window_days'])
     expirations = {}
     for firefox_version, expiration_s, _, _ in c_expirations:
         expirations[firefox_version] = expiration_s
@@ -53,7 +53,11 @@ def main():
             continue
         expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
-        c_out.writerow([version, firefox_version, release_date, expiration_date])
+        release_datetime = datetime.datetime.strptime(release_date, '%Y-%m-%d')
+        window_timedelta = expiration_datetime - release_datetime
+        window_s = window_timedelta.total_seconds() / 86400
+        window_days = '{:.2f}'.format(window_s)
+        c_out.writerow([version, firefox_version, release_date, expiration_date, window_days])
 
 if __name__ == '__main__':
     main()
