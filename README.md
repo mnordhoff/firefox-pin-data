@@ -48,3 +48,7 @@ When releases (usually from different series) are made simultaneously, the `prev
 ## License
 
 The `.csv` files are, i believe, in the public domain by nature. The other files are under the MIT license.
+
+## Contact
+
+Matt Nordhoff <mnordhoff@gmail.com>
