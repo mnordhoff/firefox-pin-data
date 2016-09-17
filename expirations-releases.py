@@ -22,9 +22,11 @@
 # SOFTWARE.
 
 """
-./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
-./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
-./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
+./expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv firefox-esr-releases.csv >firefox-esr-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
 """
 
 from __future__ import division
@@ -38,22 +40,26 @@ import sys
 def main():
     fh_expirations = open(sys.argv[1], 'rb')
     fh_releases = open(sys.argv[2], 'rb')
-    c_expirations = csv.reader(fh_expirations)
-    c_releases = csv.reader(fh_releases)
-    iter_c_expirations = iter(c_expirations)
-    iter_c_releases = iter(c_releases)
-    next(iter_c_expirations)
-    next(iter_c_releases)
+    c_expirations = csv.DictReader(fh_expirations)
+    c_releases = csv.DictReader(fh_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow([
+    write_row = [
         'version', 'release_date', 'expiration_date', 'expiration_days',
-        'previous_expiration_days', 'previous_release_days', 'firefox_version'
-        ])
+        'previous_expiration_days', 'previous_release_days'
+        ]
+    if 'firefox_version' in c_releases.fieldnames:
+        write_row.append('firefox_version')
+    c_out.writerow(write_row)
     expirations = {}
-    for firefox_version, expiration_s, _, _ in c_expirations:
+    for row in c_expirations:
+        firefox_version = row['version']
+        expiration_s = row['expiration_s']
         expirations[firefox_version] = expiration_s
     previous_expiration_datetime = previous_release_datetime = None
-    for version, firefox_version, release_date in iter_c_releases:
+    for row in c_releases:
+        version = row['version']
+        firefox_version = row.get('firefox_version', version)
+        release_date = row['date']
         expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
         release_datetime = datetime.datetime.strptime(release_date, '%Y-%m-%d')
@@ -69,10 +75,13 @@ def main():
             release_window_timedelta = release_datetime - previous_release_datetime
             release_window_s = release_window_timedelta.total_seconds() / 86400
             release_window_days = '{:.2f}'.format(release_window_s)
-        c_out.writerow([
+        write_row = [
             version, release_date, expiration_date, expiration_window_days,
-            expiration_previous_window_days, release_window_days, firefox_version
-            ])
+            expiration_previous_window_days, release_window_days
+            ]
+        if 'firefox_version' in c_releases.fieldnames:
+            write_row.append(firefox_version)
+        c_out.writerow(write_row)
         previous_expiration_datetime = expiration_datetime
         previous_release_datetime = release_datetime
 
