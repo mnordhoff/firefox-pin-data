@@ -44,8 +44,8 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'release_date', 'expiration_date', 'expiration_days', 'previous_release_days'])
-    previous_release_datetime = None
+    c_out.writerow(['version', 'release_date', 'expiration_date', 'expiration_days', 'previous_expiration_days', 'previous_release_days'])
+    previous_expiration_datetime = previous_release_datetime = None
     for expiration, release in itertools.izip(iter_c_expirations, iter_c_releases):
         expiration_version, expiration_s, _, _ = expiration
         release_version, release_date = release
@@ -57,13 +57,17 @@ def main():
         expiration_window_timedelta = expiration_datetime - release_datetime
         expiration_window_s = expiration_window_timedelta.total_seconds() / 86400
         expiration_window_days = '{:.2f}'.format(expiration_window_s)
-        if previous_release_datetime is None:
-            release_window_days = 'none'
+        if previous_expiration_datetime is None:
+            expiration_previous_window_days = release_window_days = 'none'
         else:
+            expiration_previous_window_timedelta = previous_expiration_datetime - release_datetime
+            expiration_previous_window_s = expiration_previous_window_timedelta.total_seconds() / 86400
+            expiration_previous_window_days = '{:.2f}'.format(expiration_previous_window_s)
             release_window_timedelta = release_datetime - previous_release_datetime
             release_window_s = release_window_timedelta.total_seconds() / 86400
             release_window_days = '{:.2f}'.format(release_window_s)
-        c_out.writerow([expiration_version, release_date, expiration_date, expiration_window_days, release_window_days])
+        c_out.writerow([expiration_version, release_date, expiration_date, expiration_window_days, expiration_previous_window_days, release_window_days])
+        previous_expiration_datetime = expiration_datetime
         previous_release_datetime = release_datetime
 
 if __name__ == '__main__':
