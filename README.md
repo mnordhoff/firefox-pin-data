@@ -30,6 +30,7 @@ CSV files containing Firefox (stable and ESR stable) and Tor Browser (alpha and 
 ## Limitations
 
 Firefox `38.0.6` and `40.0.1` sort of exist, but have no official release dates, and are excluded from this data.
+I suspect that `38.0.6` was released immediately after `38.0.5`, and `40.0.1` was released immediately before `40.0.2`.
 
 Firefox `45.4.0esr` and Tor Browser `6.5a3` have yet to be released and are subject to change.
 
