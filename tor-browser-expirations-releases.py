@@ -45,10 +45,11 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date', 'expiration_days'])
+    c_out.writerow(['version', 'release_date', 'expiration_date', 'expiration_days', 'previous_release_days', 'firefox_version'])
     expirations = {}
     for firefox_version, expiration_s, _, _ in c_expirations:
         expirations[firefox_version] = expiration_s
+    previous_release_datetime = None
     for version, firefox_version, release_date in iter_c_releases:
         # XXX 45.4.0esr hasn't been released yet and i haven't dug up data on it.
         if firefox_version == '45.4.0esr':
@@ -56,10 +57,16 @@ def main():
         expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
         release_datetime = datetime.datetime.strptime(release_date, '%Y-%m-%d')
-        window_timedelta = expiration_datetime - release_datetime
-        window_s = window_timedelta.total_seconds() / 86400
-        window_days = '{:.2f}'.format(window_s)
-        c_out.writerow([version, firefox_version, release_date, expiration_date, window_days])
+        expiration_window_timedelta = expiration_datetime - release_datetime
+        expiration_window_s = expiration_window_timedelta.total_seconds() / 86400
+        expiration_window_days = '{:.2f}'.format(expiration_window_s)
+        if previous_release_datetime is None:
+            release_window_days = 'none'
+        else:
+            release_window_timedelta = release_datetime - previous_release_datetime
+            release_window_s = release_window_timedelta.total_seconds() / 86400
+            release_window_days = '{:.2f}'.format(release_window_s)
+        c_out.writerow([version, firefox_version, release_date, expiration_date, expiration_window_days, release_window_days, firefox_version])
 
 if __name__ == '__main__':
     main()
