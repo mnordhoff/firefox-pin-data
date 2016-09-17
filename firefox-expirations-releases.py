@@ -23,6 +23,7 @@
 
 """
 ./firefox-expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
+./firefox-expirations-releases.py firefox-esr-expiration.csv firefox-esr-releases.csv >firefox-esr-expiration-release-dates.csv
 """
 
 from __future__ import division
