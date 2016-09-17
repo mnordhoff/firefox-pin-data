@@ -27,4 +27,6 @@ Columns:
 6. `previous_release_days`: Days from the previous row's release date until the current row's release date
 7. `firefox_version`: Tor Browser only; Firefox version it is based on
 
+Firefox `45.4.0esr` and Tor Browser `6.5a3` have yet to be released and are subject to change. Firefox `45.4.0esr-6.0.5` refers to the revision of Firefox `45.4.0esr` used by Tor Browser `6.0.5`, which may differ from the final release.
+
 The `.csv` files are, i believe, in the public domain by nature. The other files are under the MIT license.

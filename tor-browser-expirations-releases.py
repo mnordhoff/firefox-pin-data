@@ -54,9 +54,6 @@ def main():
         expirations[firefox_version] = expiration_s
     previous_expiration_datetime = previous_release_datetime = None
     for version, firefox_version, release_date in iter_c_releases:
-        # XXX 45.4.0esr hasn't been released yet and i haven't dug up data on it.
-        if firefox_version == '45.4.0esr':
-            continue
         expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
         release_datetime = datetime.datetime.strptime(release_date, '%Y-%m-%d')

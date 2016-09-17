@@ -23,6 +23,7 @@
 
 """
 ./convert-us.py <firefox-expiration-us.csv >firefox-expiration.csv
+./convert-us.py <firefox-esr-expiration-us.csv >firefox-esr-expiration.csv
 """
 
 from __future__ import division
