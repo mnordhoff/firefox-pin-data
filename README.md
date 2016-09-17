@@ -48,6 +48,8 @@ When releases (usually from different series) are made simultaneously, the `prev
 
 ## Sources
 
+https://blog.torproject.org/blog/tor-browser-605-released
+
 https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt
 https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt?h=maint-6.0
 
