@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 """
-./tor-browser-expirations-releases.py tor-browser-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
+./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
 """
 
 from __future__ import division
@@ -44,14 +44,16 @@ def main():
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
     c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date'])
-    for expiration, release in itertools.izip(iter_c_expirations, iter_c_releases):
-        expiration_version, expiration_s, _, _ = expiration
-        release_version, release_firefox_version, release_date = release
-        if expiration_version != release_firefox_version:
-            raise ValueError("%r != %r" % (expiration_version, release_version))
-        expiration_datetime = datetime.datetime.utcfromtimestamp(float(expiration_s))
+    expirations = {}
+    for firefox_version, expiration_s, _, _ in c_expirations:
+        expirations[firefox_version] = expiration_s
+    for version, firefox_version, release_date in iter_c_releases:
+        # XXX 45.4.0esr hasn't been released yet and i haven't dug up data on it.
+        if firefox_version == '45.4.0esr':
+            continue
+        expiration_datetime = datetime.datetime.utcfromtimestamp(float(expirations[firefox_version]))
         expiration_date = expiration_datetime.strftime('%Y-%m-%d')
-        c_out.writerow([release_version, expiration_version, release_date, expiration_date])
+        c_out.writerow([version, firefox_version, release_date, expiration_date])
 
 if __name__ == '__main__':
     main()
