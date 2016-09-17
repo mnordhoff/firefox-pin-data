@@ -1,4 +1,4 @@
-version,firefox_version,release_date,expiration_date,window_days
+version,firefox_version,release_date,expiration_date,expiration_days
 5.0a3,38.1.0esr,2015-06-30,2015-07-04,4.43
 5.0a4,38.1.0esr,2015-08-03,2015-07-04,-29.57
 5.0,38.2.0esr,2015-08-11,2015-11-12,93.12

@@ -1,4 +1,4 @@
-version,release_date,expiration_date,window_days
+version,release_date,expiration_date,expiration_days
 32.0,2014-09-02,2014-10-25,53.42
 32.0.1,2014-09-12,2014-10-25,43.42
 32.0.2,2014-09-18,2014-10-25,37.42

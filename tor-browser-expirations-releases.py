@@ -43,7 +43,7 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date', 'window_days'])
+    c_out.writerow(['version', 'firefox_version', 'release_date', 'expiration_date', 'expiration_days'])
     expirations = {}
     for firefox_version, expiration_s, _, _ in c_expirations:
         expirations[firefox_version] = expiration_s

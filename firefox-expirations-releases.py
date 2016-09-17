@@ -43,7 +43,7 @@ def main():
     next(iter_c_expirations)
     next(iter_c_releases)
     c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
-    c_out.writerow(['version', 'release_date', 'expiration_date', 'window_days'])
+    c_out.writerow(['version', 'release_date', 'expiration_date', 'expiration_days'])
     for expiration, release in itertools.izip(iter_c_expirations, iter_c_releases):
         expiration_version, expiration_s, _, _ = expiration
         release_version, release_date = release

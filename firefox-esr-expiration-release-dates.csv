@@ -1,4 +1,4 @@
-version,release_date,expiration_date,window_days
+version,release_date,expiration_date,expiration_days
 38.0,2015-05-12,2015-07-04,53.43
 38.0esr,2015-05-12,2015-07-04,53.43
 38.0.1esr,2015-05-14,2015-07-04,51.43
