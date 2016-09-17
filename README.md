@@ -10,7 +10,7 @@ Files:
 * `tor-browser-stable-*`: Tor Browser stable releases
 * `tor-browser-*`: Tor browser alpha and stable releases in chronological order
 
-* `*-expiration-release-dates.csv`: Pin expiration and release dates
+* `*-expiration-release-dates.csv`: Most of the information combined; see below
 * `*-expiration-us.csv`: Pin expiration timestamps, in microseconds since 1970-01-01T00:00:00.000000Z
 * `*-expiration.csv`: Pin expiration second timestamps, microsecond timestamps, and ISO 8601 strings
 * `*-releases.csv`: Release dates
@@ -27,4 +27,4 @@ Columns:
 6. `previous_release_days`: Days from the previous row's release date until the current row's release date
 7. `firefox_version`: Tor Browser only; Firefox version it is based on
 
-The .csv files are, i believe, in the public domain by nature. The other files are under the MIT license.
+The `.csv` files are, i believe, in the public domain by nature. The other files are under the MIT license.
