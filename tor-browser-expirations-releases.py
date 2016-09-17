@@ -23,6 +23,8 @@
 
 """
 ./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
+./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
+./tor-browser-expirations-releases.py firefox-esr-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
 """
 
 from __future__ import division
