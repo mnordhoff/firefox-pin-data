@@ -34,15 +34,15 @@ import os
 import sys
 
 def main():
-    cin = csv.reader(sys.stdin)
-    cout = csv.writer(sys.stdout, lineterminator=os.linesep)
-    cout.writerow(['version', 'expiration_s', 'expiration_us', 'expiration_iso'])
-    it = iter(cin)
-    next(it)
-    for version, expiration_us in it:
+    c_in = csv.DictReader(sys.stdin)
+    c_out = csv.writer(sys.stdout, lineterminator=os.linesep)
+    c_out.writerow(['version', 'expiration_s', 'expiration_us', 'expiration_iso'])
+    for row in c_in:
+        version = row['version']
+        expiration_us = row['expiration_us']
         expiration_s = int(expiration_us) / 10**6
         expiration_iso = datetime.datetime.utcfromtimestamp(expiration_s).isoformat() + 'Z'
-        cout.writerow([version, expiration_s, expiration_us, expiration_iso])
+        c_out.writerow([version, expiration_s, expiration_us, expiration_iso])
 
 if __name__ == '__main__':
     main()

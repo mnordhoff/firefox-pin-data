@@ -84,6 +84,8 @@ def main():
         c_out.writerow(write_row)
         previous_expiration_datetime = expiration_datetime
         previous_release_datetime = release_datetime
+    fh_expirations.close()
+    fh_releases.close()
 
 if __name__ == '__main__':
     main()
