@@ -1,7 +1,7 @@
 # Firefox and Tor Browser pin data
 
 CSV files containing Firefox (stable and ESR stable) and Tor Browser (alpha and stable) release dates and static key
-pinning expiration dates. And two hacky Python programs for processing it.
+pinning expiration dates. And some hacky Python programs for processing it.
 
 ## Files
 
