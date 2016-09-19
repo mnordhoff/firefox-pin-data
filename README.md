@@ -32,15 +32,13 @@ pinning expiration dates. And some hacky Python programs for processing it.
 
 ## Limitations
 
+Firefox 33's release date is given as [2015-10-13][4] or [2015-10-14][5] in different sources. 2015-10-13 is used here.
+
 Firefox [38.0.6][1] and [40.0.1][2] sort of exist, but have no official release dates, and are excluded from this data.
 Their expiration timestamps were identical to the preceding releases.
 I suspect that 38.0.6 was released immediately after 38.0.5, and 40.0.1 was released immediately before 40.0.2.
 
 Firefox 45.4.0esr and 49.0 and Tor Browser 6.5a3 have yet to be released and are subject to change.
-
-The Tor Browser data assumes the release date given in the changelog is accurate.
-
-Some of the data, such as Firefox release dates, could have typos.
 
 When releases (usually from different series) are made simultaneously, the `previous_expiration_days` and `previous_release_days` fields can be nonsensical.
 
@@ -72,3 +70,5 @@ Matt Nordhoff <mnordhoff@gmail.com> ([@mnordhoff][3])
 [1]: https://wiki.mozilla.org/Releases/Firefox_38.0.6/BuildNotes
 [2]: https://wiki.mozilla.org/Releases/Firefox_40.0.1/BuildNotes
 [3]: https://twitter.com/mnordhoff
+[4]: https://www.mozilla.org/en-US/firefox/33.0/releasenotes/
+[5]: https://wiki.mozilla.org/Releases/Old/2014
