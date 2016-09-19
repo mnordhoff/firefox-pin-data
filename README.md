@@ -5,7 +5,7 @@ pinning expiration dates. And some hacky Python programs for processing it.
 
 ## Files
 
-* `firefox-esr-*`: Firefox ESR releases
+* `firefox-esr*`: Firefox ESR releases
 * `firefox-*`: Firefox regular releases
 * `tor-browser-alpha-*`: Tor Browser alpha releases, and a few stable releases
 * `tor-browser-stable-*`: Tor Browser stable releases
