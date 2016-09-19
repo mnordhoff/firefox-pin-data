@@ -30,29 +30,29 @@ import os
 import sys
 
 _months = {
-    'Jan': '1',
-    'January': '1',
-    'Feb': '2',
-    'February': '2',
-    'Mar': '3',
-    'March': '3',
-    'Apr': '4',
-    'April': '4',
-    'May': '5',
-    'Jun': '6',
-    'June': '6',
-    'Jul': '7',
-    'July': '7',
-    'Aug': '8',
-    'August': '8',
-    'Sep': '9',
-    'September': '9',
-    'Oct': '10',
-    'October': '10',
-    'Nov': '11',
-    'November': '11',
-    'Dec': '12',
-    'December': '12',
+    'Jan': 1,
+    'January': 1,
+    'Feb': 2,
+    'February': 2,
+    'Mar': 3,
+    'March': 3,
+    'Apr': 4,
+    'April': 4,
+    'May': 5,
+    'Jun': 6,
+    'June': 6,
+    'Jul': 7,
+    'July': 7,
+    'Aug': 8,
+    'August': 8,
+    'Sep': 9,
+    'September': 9,
+    'Oct': 10,
+    'October': 10,
+    'Nov': 11,
+    'November': 11,
+    'Dec': 12,
+    'December': 12,
 }
 
 def main():
@@ -72,16 +72,13 @@ def main():
                 continue
             version = version.replace('-alpha-', 'a')
             month = _months[split[4]]
-            if len(month) == 1:
-                month = '0' + month
-            day = split[5]
-            if len(day) == 1:
-                day = '0' + day
+            day = int(split[5])
+            # Changelog entry is missing year
             if version == '6.0.5':
                 year = '2016'
             else:
                 year = split[6]
-            date = '%s-%s-%s' % (year, month, day)
+            date = '{}-{:02}-{:02}'.format(year, month, day)
             c_out.writerow([version, firefox_version, date])
 
 if __name__ == '__main__':
