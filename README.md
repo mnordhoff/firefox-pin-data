@@ -36,7 +36,7 @@ Firefox [38.0.6][1] and [40.0.1][2] sort of exist, but have no official release 
 Their expiration timestamps were identical to the preceding releases.
 I suspect that 38.0.6 was released immediately after 38.0.5, and 40.0.1 was released immediately before 40.0.2.
 
-Firefox 45.4.0esr and Tor Browser 6.5a3 have yet to be released and are subject to change.
+Firefox 45.4.0esr and 49.0 and Tor Browser 6.5a3 have yet to be released and are subject to change.
 
 The Tor Browser data assumes the release date given in the changelog is accurate.
 
