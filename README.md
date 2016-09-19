@@ -5,11 +5,13 @@ pinning expiration dates. And some hacky Python programs for processing it.
 
 ## Files
 
-* `firefox-esr*`: Firefox ESR releases
+* `firefox-esr38-*`: Firefox ESR 38 releases
+* `firefox-esr45-*`: Firefox ESR 45 releases
+* `firefox-esr-*`: Most Firefox ESR releases in chronological order
 * `firefox-*`: Firefox regular releases
 * `tor-browser-alpha-*`: Tor Browser alpha releases, and a few stable releases
 * `tor-browser-stable-*`: Tor Browser stable releases
-* `tor-browser-*`: Tor browser alpha and stable releases in chronological order
+* `tor-browser-*`: All Tor browser alpha and stable releases in chronological order
 
 * `*-expiration-release-dates.csv`: Most of the information combined; see below
 * `*-expiration-us.csv`: Pin expiration timestamps, in microseconds since 1970-01-01T00:00:00.000000Z

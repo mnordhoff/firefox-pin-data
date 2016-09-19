@@ -23,6 +23,7 @@
 
 """
 ./expirations-releases.py firefox-expiration.csv firefox-releases.csv >firefox-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv firefox-esr-releases.csv >firefox-esr-expiration-release-dates.csv
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr38-releases.csv >firefox-esr38-expiration-release-dates.csv
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr45-releases.csv >firefox-esr45-expiration-release-dates.csv
 ./expirations-releases.py tor-browser-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
