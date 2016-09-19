@@ -3,6 +3,8 @@
 CSV files containing Firefox (stable and ESR stable) and Tor Browser (alpha and stable) release dates and static key
 pinning expiration dates. And some hacky Python programs for processing it.
 
+For context, please read [Ryan Duff's][6] post [Postmortem of the Firefox (and Tor) Certificate Pinning Vulnerability Rabbit Hole][7].
+
 ## Files
 
 * `firefox-esr38-*`: Firefox ESR 38 releases
@@ -72,3 +74,5 @@ Matt Nordhoff <mnordhoff@gmail.com> ([@mnordhoff][3])
 [3]: https://twitter.com/mnordhoff
 [4]: https://www.mozilla.org/en-US/firefox/33.0/releasenotes/
 [5]: https://wiki.mozilla.org/Releases/Old/2014
+[6]: https://twitter.com/flyryan
+[7]: https://medium.com/@flyryan/postmortem-of-the-firefox-and-tor-certificate-pinning-vulnerability-rabbit-hole-bd507c1403b4
