@@ -31,28 +31,17 @@ import sys
 
 _months = {
     'Jan': 1,
-    'January': 1,
     'Feb': 2,
-    'February': 2,
     'Mar': 3,
-    'March': 3,
     'Apr': 4,
-    'April': 4,
     'May': 5,
     'Jun': 6,
-    'June': 6,
     'Jul': 7,
-    'July': 7,
     'Aug': 8,
-    'August': 8,
     'Sep': 9,
-    'September': 9,
     'Oct': 10,
-    'October': 10,
     'Nov': 11,
-    'November': 11,
     'Dec': 12,
-    'December': 12,
 }
 
 def main():
@@ -66,12 +55,10 @@ def main():
         elif line.startswith('Tor Browser '):
             split = line.split()
             version = split[2]
-            if not version.startswith(('4', '5', '6')):
-                continue
-            if version.startswith('4.0'):
+            if not version.startswith(('4.5', '5', '6')):
                 continue
             version = version.replace('-alpha-', 'a')
-            month = _months[split[4]]
+            month = _months[split[4][:3]]
             day = int(split[5])
             # Changelog entries are missing year
             if version.startswith('6.0'):
