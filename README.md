@@ -27,4 +27,4 @@ Columns:
 6. `previous_release_days`: Days from the previous row's release date until the current row's release date
 7. `firefox_version`: Tor Browser only; Firefox version it is based on
 
-The .csv files are, i believe, in the public domain by nature. The other files are under the MIT license.
+Licensed under the MIT license; see `LICENSE.txt`. Nonetheless, i believe the .csv files are in the public domain by nature.
