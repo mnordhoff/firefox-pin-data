@@ -61,7 +61,7 @@ There were several Tor Browser 4.0.x series point releases after 4.5a1, but they
 
 ## License
 
-The `.csv` files are, i believe, in the public domain by nature. The other files are under the MIT license.
+Licensed under the MIT license; see [`LICENSE.txt`][8]. Nonetheless, i believe the `.csv` files are in the public domain by nature.
 
 ## Contact
 
@@ -74,3 +74,4 @@ Matt Nordhoff <mnordhoff@gmail.com> ([@mnordhoff][3])
 [5]: https://wiki.mozilla.org/Releases/Old/2014
 [6]: https://twitter.com/flyryan
 [7]: https://medium.com/@flyryan/postmortem-of-the-firefox-and-tor-certificate-pinning-vulnerability-rabbit-hole-bd507c1403b4
+[8]: LICENSE.txt
