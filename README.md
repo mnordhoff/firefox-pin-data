@@ -34,7 +34,7 @@ For context, please read [Ryan Duff's][6] post [Postmortem of the Firefox (and T
 
 ## Limitations
 
-Firefox 33's release date is given as [2015-10-13][4] or [2015-10-14][5] in different sources. 2015-10-13 is used here.
+Firefox 33's release date is given as [2014-10-13][4] or [2014-10-14][5] in different sources. 2014-10-13 is used here.
 
 Firefox [38.0.6][1] and [40.0.1][2] sort of exist, but have no official release dates, and are excluded from this data.
 Their expiration timestamps were identical to the preceding releases.
