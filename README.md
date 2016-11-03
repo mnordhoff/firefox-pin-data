@@ -79,5 +79,5 @@ Matt Nordhoff <mnordhoff@gmail.com> ([@mnordhoff][3])
 [6]: https://twitter.com/flyryan
 [7]: https://medium.com/@flyryan/postmortem-of-the-firefox-and-tor-certificate-pinning-vulnerability-rabbit-hole-bd507c1403b4
 [8]: LICENSE.txt
-[9]: https://wiki.mozilla.org/index.php?search=47.0.2&title=Special%3ASearch&go=Go
+[9]: https://bugzilla.mozilla.org/show_bug.cgi?id=1313434
 [10]: https://wiki.mozilla.org/Firefox/Channels/Meetings/2016-11-01#Schedule_Update
