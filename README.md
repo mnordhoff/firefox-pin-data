@@ -40,10 +40,6 @@ Firefox [38.0.6][1] and [40.0.1][2] sort of exist, but have no official release 
 Their expiration timestamps were identical to the preceding releases.
 I suspect that 38.0.6 was released immediately after 38.0.5, and 40.0.1 was released immediately before 40.0.2.
 
-Firefox [47.0.2][9] sort of exists, but has no official release date, and is excluded from this data.
-Its expiration timestamp is unique.
-It most likely was or will be released in [early November 2016][10], or not at all.
-
 When releases (usually from different series) are made simultaneously, the `previous_expiration_days` and `previous_release_days` fields can be nonsensical.
 
 There were several Tor Browser 4.0.x series point releases after 4.5a1, but they didn't support pinning and are excluded.
@@ -79,5 +75,3 @@ Matt Nordhoff <mnordhoff@gmail.com> ([@mnordhoff][3])
 [6]: https://twitter.com/flyryan
 [7]: https://medium.com/@flyryan/postmortem-of-the-firefox-and-tor-certificate-pinning-vulnerability-rabbit-hole-bd507c1403b4
 [8]: LICENSE.txt
-[9]: https://bugzilla.mozilla.org/show_bug.cgi?id=1313434
-[10]: https://wiki.mozilla.org/Firefox/Channels/Meetings/2016-11-01#Schedule_Update
