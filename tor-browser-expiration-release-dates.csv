@@ -58,3 +58,4 @@ version,release_date,expiration_date,expiration_days,previous_expiration_days,pr
 6.5a3-hardened,2016-09-20,2016-12-17,88.53,88.53,0.00,45.4.0esr
 6.0.6,2016-11-15,2017-02-14,91.60,32.53,56.00,45.5.0esr
 6.5a4,2016-11-16,2017-02-14,90.60,90.60,1.00,45.5.0esr
+6.5a4-hardened,2016-11-16,2017-02-14,90.60,90.60,0.00,45.5.0esr
