@@ -60,8 +60,8 @@ def main():
             version = version.replace('-alpha-', 'a')
             month = _months[split[4][:3]]
             day = int(split[5])
-            # Changelog entries are missing year
-            if version.startswith('6.0'):
+            # Some changelog entries are missing year
+            if version.startswith('6'):
                 year = '2016'
             else:
                 year = split[6]
