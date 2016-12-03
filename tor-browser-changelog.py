@@ -61,7 +61,7 @@ def main():
             month = _months[split[4][:3]]
             day = int(split[5])
             # Some changelog entries are missing year
-            if version.startswith('6'):
+            if len(split) == 6:
                 year = '2016'
             else:
                 year = split[6]
