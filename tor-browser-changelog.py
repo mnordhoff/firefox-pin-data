@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-# Copyright (c) 2016 Matt Nordhoff <mnordhoff@mattnordhoff.com>
+# Copyright (c) 2016-2017 Matt Nordhoff <mnordhoff@mattnordhoff.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,7 @@ def main():
         elif line.startswith('Tor Browser '):
             split = line.split()
             version = split[2]
-            if not version.startswith(('4.5', '5', '6')):
+            if not version.startswith(('4.5', '5', '6', '7')):
                 continue
             version = version.replace('-alpha-', 'a')
             month = _months[split[4][:3]]
