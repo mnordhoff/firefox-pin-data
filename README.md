@@ -9,6 +9,7 @@ For context, please read [Ryan Duff's][6] post [Postmortem of the Firefox (and T
 
 * `firefox-esr38-*`: Firefox ESR 38 releases
 * `firefox-esr45-*`: Firefox ESR 45 releases
+* `firefox-esr52-*`: Firefox ESR 52 releases
 * `firefox-esr-*`: Most Firefox ESR releases in chronological order
 * `firefox-*`: Firefox regular releases
 * `tor-browser-alpha-*`: Tor Browser alpha releases, and a few stable releases
@@ -52,6 +53,7 @@ There were several Tor Browser 4.0.x series point releases after 4.5a1, but they
 
 * https://hg.mozilla.org/releases/mozilla-esr38/
 * https://hg.mozilla.org/releases/mozilla-esr45/
+* https://hg.mozilla.org/releases/mozilla-esr52/
 * https://hg.mozilla.org/releases/mozilla-release/
 
 * https://wiki.mozilla.org/Releases/Old/2014
