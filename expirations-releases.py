@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-# Copyright (c) 2016 Matt Nordhoff <mnordhoff@mattnordhoff.com>
+# Copyright (c) 2016-2017 Matt Nordhoff <mnordhoff@mattnordhoff.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,7 @@
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr-releases.csv >firefox-esr-expiration-release-dates.csv
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr38-releases.csv >firefox-esr38-expiration-release-dates.csv
 ./expirations-releases.py firefox-esr-expiration.csv firefox-esr45-releases.csv >firefox-esr45-expiration-release-dates.csv
+./expirations-releases.py firefox-esr-expiration.csv firefox-esr52-releases.csv >firefox-esr52-expiration-release-dates.csv
 ./expirations-releases.py tor-browser-expiration.csv tor-browser-releases.csv >tor-browser-expiration-release-dates.csv
 ./expirations-releases.py tor-browser-expiration.csv tor-browser-alpha-releases.csv >tor-browser-alpha-expiration-release-dates.csv
 ./expirations-releases.py tor-browser-expiration.csv tor-browser-stable-releases.csv >tor-browser-stable-expiration-release-dates.csv
