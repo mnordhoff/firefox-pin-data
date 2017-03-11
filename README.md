@@ -50,6 +50,7 @@ There were several Tor Browser 4.0.x series point releases after 4.5a1, but they
 * https://gitweb.torproject.org/tor-browser.git/
 * https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt
 * https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt?h=maint-6.0
+* https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/Bundle-Data/Docs/ChangeLog.txt?h=maint-6.5
 
 * https://hg.mozilla.org/releases/mozilla-esr38/
 * https://hg.mozilla.org/releases/mozilla-esr45/
