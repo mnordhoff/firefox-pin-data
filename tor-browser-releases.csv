@@ -70,3 +70,5 @@ version,firefox_version,date
 7.0a1-hardened,45.7.0esr,2017-01-25
 6.5.1,45.8.0esr,2017-03-07
 7.0a2,45.8.0esr,2017-03-07
+7.0a2-hardened,45.8.0esr,2017-03-07
+6.5.2,45.9.0esr,2017-04-19

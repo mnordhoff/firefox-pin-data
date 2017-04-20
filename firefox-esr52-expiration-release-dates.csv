@@ -1,3 +1,5 @@
 version,release_date,expiration_date,expiration_days,previous_expiration_days,previous_release_days
 52.0esr,2017-03-07,2017-06-08,93.65,none,none
 52.0.1esr,2017-03-17,2017-06-12,87.65,83.65,10.00
+52.0.2esr,2017-03-29,2017-06-12,75.65,75.65,12.00
+52.1.0esr,2017-04-19,2017-07-23,95.62,54.65,21.00
